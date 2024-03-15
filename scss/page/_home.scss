@@ -1,0 +1,300 @@
+@use '../abstract' as *;
+@use '../base' as *;
+@use '../component' as *;
+@use '../layout' as *;
+@use '../vendor' as *;
+
+body {
+    background: $clr-dark;
+    min-height: 100vh;
+}
+
+.main__wrapper {
+    @include mediaQueryMax {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    width: 73%;
+    margin: 0 auto;
+}
+
+.content {
+    width: 100%;
+}
+
+.banner {
+    @include mediaQueryMax {
+        transform: rotate(90deg);
+    }
+    
+    picture {
+        position: relative;
+        overflow: hidden;
+        @include imgCover(100%, 100%);
+        // @include mediaQueryMax(){
+        //     height: 40rem
+        // }
+    }
+
+    h1 {
+        @include mediaQueryMax {
+            font-size: 2rem;
+            @include flex (flex-end, center);
+        }
+        position: absolute;
+        top: 220px;
+        left: 910px;
+        right: 2rem;
+        width: 100%;
+        color: $clr-light;
+        text-transform: uppercase;
+        font-family: "Ubuntu Condensed", arial, sans-serif;
+        font-size: 5.5rem;
+        font-weight: 200;
+        line-height: 1;
+        
+    }
+
+}
+
+.services {
+    margin-top: 30px;
+    background: $clr-primary;
+    padding-bottom: 5rem;
+    
+    .container {
+        margin-right: auto;
+        margin-left: auto;
+        box-sizing: border-box;
+    }
+
+    &__wrapper {
+        @include mediaQueryMax {
+            @include grid(1);
+            grid-gap: 5rem;
+        }
+        @include flex(center, center);
+        gap: 5rem;
+    }
+
+    &__card {
+        text-align: center;
+
+        h3 {
+            margin-top: 71px;
+            padding-bottom: 32px;
+            border-bottom: 4px solid #3e3e43;
+            font-family: "Ubuntu Condensed", arial, sans-serif;
+            text-transform: uppercase;
+            // one line
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: clip;
+            font-size: 2rem;
+        }
+
+        i {
+           font-size: 5rem;
+           margin-top: 25px;
+           color: $clr-light;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 33px;
+            margin-bottom: 33px;
+        }
+
+         a {
+            margin-top: 5rem;
+            padding: 16px 32px;
+            text-decoration: none;
+            font: 20px / 18px "Ubuntu Condensed", Arial, sans-serif;
+            color: $clr-light;
+            background: $clr-accent;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    }
+
+    &__card:hover {
+        background-color: $clr-dark;
+        transition: transform .2s;
+        
+
+        i {
+            
+            color: $clr-accent;
+         }
+
+         a {
+            background-color: $clr-light;
+            color: $clr-dark;;
+         }
+    }
+}
+
+.repair {
+    position: relative;
+    width: 100%;
+    margin-top: 29px;
+    padding: 49px 0 113px;
+    font-size: 13px;
+    color: #fff;
+    background-color: $clr-accent;
+    h2 {
+        @include mediaQueryMax {
+            text-align: center;
+        }
+
+        font: 40px / 44px 'Ubuntu Condensed', Arial, sans-serif;
+        color: $clr-light;
+        margin-top: 50px;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+        padding-bottom: 18px;
+        border-bottom: 1px solid #fa858a;
+    }
+
+    &__card {
+        width: 389px;
+        // float: left;
+        p {
+            margin-top: 33px;
+            text-align: justify;
+            word-spacing: normal;
+        }
+    }
+}
+
+.aboutUs {
+    width: 100%;
+    margin-top: 31px;
+    background: $clr-secondary;
+    padding: 54px 0 109px;
+    font-size: 15px;
+
+    &__wrapper {
+        @include mediaQueryMax {
+            @include grid(1);
+        }
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    h2 {
+        color: $clr-primary;
+        border-color: #d9d9db;
+        padding-bottom: 12px;
+        margin-bottom: 1px;
+        font-family: "Ubuntu Condensed", arial, sans-serif;
+        font-size: 4rem;
+    }
+
+    p {
+        margin-top: 33px;
+        color: $clr-primary;
+    }
+
+    .hline1 {
+        position: relative;
+        width: 86%;
+        height: 1px;
+        display: block;
+        margin: 18px 0 -4px;
+        background: #d9d9db;
+    }
+
+    .hline2 {
+        position: relative;
+        width: 91%;
+        height: 1px;
+        display: block;
+        margin: 18px 0 -4px;
+        background: #d9d9db;
+        margin: 15px 0 -23px;
+    }
+
+    .hline3 {
+        position: relative;
+        width: 91%;
+        height: 1px;
+        display: block;
+        margin: 18px 0 -4px;
+        background: #d9d9db;
+        margin: 8px 0 -20px;
+    }
+
+    .p_red {
+        font-size: 13px;
+        color: $clr-accent;
+        margin-top: 33px;
+    }
+}
+
+.cta {
+    width: 100%;
+    position: relative;
+    margin-top: 30px;
+    background: #343438;
+    padding: 54px 0 109px;
+    color: #fff;
+
+    .container {
+
+        margin-right: auto;
+        margin-left: auto;
+        box-sizing: border-box;
+    }
+
+    h2 {
+        @include mediaQueryMax {
+             font-size: 3.5rem;
+             text-align: center;
+             line-height: 2;
+        }
+        font: 126px / 110px 'Ubuntu Condensed', Arial, sans-serif;
+        color: $clr-light;
+        margin-top: 64px;
+        text-transform: uppercase;
+        letter-spacing: -4px;
+    }
+
+    a {
+        @include mediaQueryMax {
+            text-align: center;
+            padding: 20px 2px;
+            font-size: 2rem;
+            margin-left: .5rem;
+        }
+
+        display: inline-block;
+        text-decoration: none;
+        font: 20px / 18px "Ubuntu Condensed", Arial, sans-serif;
+        background: $clr-accent;
+        text-transform: uppercase;
+
+        float: left;
+        margin-right: 20px;
+        margin-top: 41px;
+        padding: 26px 35px;
+        cursor: pointer;
+    }
+
+    a:hover {
+        background-color: $clr-accent;
+        color: $clr-light;
+    }
+
+    i {
+        @include mediaQueryMax {
+            @include flex (center,center);
+            margin-top: 7.5rem;
+        }
+
+        margin-top: 5.5rem;
+        font: normal normal 30px / 40px 'FontAwesome';
+    }
+}
+

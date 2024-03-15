@@ -1,0 +1,68 @@
+@use '../abstract' as  *;
+
+.tns-outer {
+    position: relative;  
+   .tns-nav {
+        position: absolute;
+        bottom: 17rem;
+        left: 940px;
+        transform: translate(-50%);
+        z-index: 10;
+        button {
+            margin: 0 .5rem;
+            width: 13px;
+            height: 13px;
+            border-radius: 100%;
+            border: none;
+        }
+
+        & button.tns-nav-active {
+            background-color: $clr-dark;
+        }
+        
+    } 
+}
+
+.tns-controls {
+    // @include flex (space-between, center);
+    // margin: 2rem 0;
+    // button {
+    //     background: transparent;
+    //     border: none;
+    //     font-size: 3rem;
+    //     color: $clr-light;
+    // }
+
+    @include mediaQueryMax {
+        position: static;
+        @include flex (space-between, center);
+       margin: 2rem 0;
+       button {
+        @include mediaQueryMax {
+            font-size: 1.5rem;
+        }
+
+           background: transparent;
+           border: none;
+           font-size: 3rem;
+           color: $clr-dark;
+        }
+   }
+
+    position: absolute;
+    bottom: 30rem;
+    left: 82rem;
+    display: flex ;
+    gap: 2rem;
+    button {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      @include flex(center, center);
+      background-color: $clr-light;
+      border: none;
+      color: $clr-dark 
+    }
+
+}
+
